@@ -50,14 +50,32 @@
 # 3. Задайте последовательность чисел. Напишите программу, которая выведет список 
 # неповторяющихся элементов исходной последовательности.
 
-listN = list(input("Введите числа для списка....").split())
-listNew = []
-for i in listN: 
-    if i not in listNew:
-        listNew.append(i)
-print(listNew)
+# listN = list(input('Введите числа для списка....').split())
+# listNew = []
+# for i in listN: 
+#     if i not in listNew:
+#         listNew.append(i)
+# print(listNew)
 
 # 4. Задана натуральная степень k. Сформировать случайным образом 
 # список коэффициентов (значения от 0 до 100) многочлена и записать в файл многочлен степени k.
 # Пример:
 # - k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
+
+import random
+K = int(input('Введите степень... '))
+diff = 0
+S = int(random.randint(0, 10))
+for i in range(K):
+    S = int(random.randint(0, 10))
+    if S != 0:
+        diff = S**K
+        K = K - 1
+        print(f'{S}^{K}({S**K}) + ', end='')
+S = int(random.randint(0, 10))
+if S != 0:    
+    print(S, end=' = ')
+    print(diff + S)
+else:
+    print(end=' = ')
+    print(diff)
