@@ -57,6 +57,25 @@
 #         listNew.append(i)
 # print(listNew)
 
+# number_set = set()
+# out_list = []
+# some_list = list(map(int, input().split()))
+# for ind in range(0, len(some_list)):
+#     if some_list[ind] not in number_set:
+#         number_set.add(some_list[ind])
+#         for ind1 in range(ind + 1, len(some_list)):
+#             if some_list[ind] == some_list[ind1]:
+#                 break
+#         else:
+#             out_list.append(some_list[ind])
+# print(out_list)
+
+# some_list = list(map(int, input().split()))
+# for i in some_list:
+#     if some_list.count(i) == 1:
+#         print(i, end=' ')
+
+
 # 4. Задана натуральная степень k. Сформировать случайным образом 
 # список коэффициентов (значения от 0 до 100) многочлена и записать в файл многочлен степени k.
 # Пример:
@@ -65,13 +84,14 @@
 import random
 K = int(input('Введите степень... '))
 diff = 0
-S = int(random.randint(0, 10))
 for i in range(K):
     S = int(random.randint(0, 10))
     if S != 0:
-        diff = S**K
-        K = K - 1
+        diff = diff + S**K
         print(f'{S}^{K}({S**K}) + ', end='')
+        K = K - 1
+        
+        
 S = int(random.randint(0, 10))
 if S != 0:    
     print(S, end=' = ')
